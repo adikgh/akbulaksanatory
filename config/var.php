@@ -6,7 +6,7 @@
    if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
    
    // 
-   $ver = 2.111;
+   $ver = 2.22;
    $site_set = [
       'header' => true,
       'menu' => true,

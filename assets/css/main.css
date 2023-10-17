@@ -483,6 +483,16 @@
 		font-size: 38px;
 	}
 }
+@media (max-width: 375px) {
+	.top_site_hu h2{
+		font-size: 32px;
+	}
+}
+@media (max-width: 375px) {
+	.top_site_hu h2{
+		font-size: 32px;
+	}
+}
 .top_site_hu p{
 	margin-top: 30px;
 	font-weight: 400;
