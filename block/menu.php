@@ -21,9 +21,9 @@
 			<nav class="menu_dk">
 				<ul class="menu_i">
 					<li><a href="#about">Об санатории</a></li>
-					<li><a href="#" class="rrr_zab">СТОИМОСТЬ ПУТЕВКИ</a></li>
-					<li><a href="#" class="rrr_zab">БЕСПЛАТНЫЕ УСЛУГИ</a></li>
-					<li><a href="#" class="rrr_zab">ПЛАТНЫЕ УСЛУГИ</a></li>
+					<li><a href="#" class="rrr_zab" data-img="sss.jpg">СТОИМОСТЬ ПУТЕВКИ</a></li>
+					<li><a href="#" class="rrr_zab" data-img="bss.jpg">БЕСПЛАТНЫЕ УСЛУГИ</a></li>
+					<li><a href="#" class="rrr_zab" data-img="pss.jpg">ПЛАТНЫЕ УСЛУГИ</a></li>
 					<!-- <li><a href="#rooms">Номера и прайсы</a></li> -->
 					<li><a href="#reviews">Отзывы</a></li>
 					<!-- <li><a href="#contacts">Контакты</a></li> -->
