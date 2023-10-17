@@ -15,6 +15,7 @@
 			<div class="top_site_hu">
 				<h2>Санаторий "Ак-Булак"</h2>
 				<p>МЫ ПОЗАБОТИМСЯ О ВАШЕМ ЗДОРОВЬЕ!</p>
+				<div class="btn disb_zab">ЗАБРОНИРОВАТЬ</div>
 			</div>
 		</div>
 	</div>

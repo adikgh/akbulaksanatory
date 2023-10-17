@@ -496,6 +496,18 @@
 }
 
 
+.top_site_hu .btn{
+	display: none;
+	margin-top: 20px;
+}
+@media (max-width: 500px) {
+	.top_site_hu .btn{
+		display: inline-flex;
+		width: auto;
+		margin: 20px auto 0 auto;
+	}
+}
+
 
 
 
