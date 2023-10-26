@@ -88,3 +88,31 @@
 	}
 
 
+
+
+	// company_edit
+	if(isset($_GET['company_edit'])) {
+		$name = @strip_tags($_POST['name']);
+		$phone = '8'.substr(strval(@strip_tags($_POST['phone'])), 1);
+		$phone_alt = @strip_tags($_POST['phone_alt']);
+		$whatsapp = @strip_tags($_POST['whatsapp']);
+		$whatsapp_alt = @strip_tags($_POST['whatsapp_alt']);
+		$instagram = @strip_tags($_POST['instagram']);
+		$telegram = @strip_tags($_POST['telegram']);
+		$metrika = @strip_tags($_POST['metrika']);
+		$pixel = @strip_tags($_POST['pixel']);
+
+		if ($name) $upd = db::query("UPDATE `site` SET `name`='$name', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($phone) $upd = db::query("UPDATE `site` SET `phone`='$phone', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($phone_alt) $upd = db::query("UPDATE `site` SET `phone_view`='$phone_alt', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($whatsapp) $upd = db::query("UPDATE `site` SET `whatsapp`='$whatsapp', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($whatsapp_alt) $upd = db::query("UPDATE `site` SET `whatsapp_view`='$whatsapp_alt', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($instagram) $upd = db::query("UPDATE `site` SET `instagram`='$instagram', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($telegram) $upd = db::query("UPDATE `site` SET `telegram`='$telegram', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($metrika) $upd = db::query("UPDATE `site` SET `metrika`='$metrika', `upd_dt` = '$datetime' WHERE `id`=1");
+		if ($pixel) $upd = db::query("UPDATE `site` SET `pixel`='$pixel', `upd_dt` = '$datetime' WHERE `id`=1");
+
+		echo 'yes';
+		exit();
+	}
+	

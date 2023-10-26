@@ -1,24 +1,22 @@
 <? if ($site_set['header'] == true): ?>
-	<!-- header_menu -->
 	<div class="header ">
 		<div class="header_c">
 			<div class="header_l">
 				<a class="logo" href="/admin/">
-					<div class="logo_l lazy_img" data-src="/assets/img/logo/icon_black.png"></div>
 					<div class="logo_r"><?=$site['name']?></div>
 				</a>
 			</div>
 			<div class="header_r">
 				<? if ($user_id): ?>
 					<div class="cmenu">
-						<a class="cmenu_i <?=($menu_name=='cours'?'cmenu_i_act':'')?>" href="/admin/catalog/">Шипажайлар</a>
+						<a class="cmenu_i <?=($menu_name=='cours'?'cmenu_i_act':'')?>" href="/admin/item/">Номера</a>
 					</div>
 					<div class="menu">
 						<div class="menu_m menu_bars_clc">
 							<div class="menu_mn"><?=$user['name']?> <?=($user['surname']?substr($user['surname'],0,1).'.':'')?></div>
 							<div class="menu_bars">
-								<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['img']?>">
-									<?=($user['img']?'':'<i class="fal fa-user"></i>')?>
+								<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['logo']?>">
+									<?=($user['logo']?'':'<i class="fal fa-user"></i>')?>
 								</div>
 							</div>
 						</div>
@@ -62,8 +60,8 @@
 				<? if ($site_set['utopu'] != false): ?>
 					<a class="menu" href="/admin/acc/">
 						<div class="menu_bars">
-							<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['img']?>">
-								<?=($user['img']?'':'<i class="fal fa-user"></i>')?>
+							<div class="menu_bars_c lazy_img" data-src="/assets/uploads/users/<?=$user['logo']?>">
+								<?=($user['logo']?'':'<i class="fal fa-user"></i>')?>
 							</div>
 						</div>
 					</a>
@@ -76,17 +74,3 @@
 <!-- body start -->
 <div class="app">
 	<div class="ub1">
-
-	<!-- Шапка -->
-	<? if ($site_set['utop_bk']): ?>
-		<div class="utopc <?=(!$user_right?'uitemc_ud':'') ?>">
-			<a class="utopc_bk" href="/admin/<?=$site_set['utop_bk']?>">
-				<div class=""><i class="fal fa-long-arrow-left"></i></div>
-				<span>Артқа</span>
-			</a>
-			<a class="utopc_s" href="/admin/catalog/">Курсы</a>
-			<a class="utopc_s" href="/admin/item/?id=<?=$cours_id?>"><?=$cours_d['name_'.$lang]?></a>
-			<? if ($pod_menu_name == 'users'): ?> <div class="utopc_s">Оқушылар</div> <? endif ?>
-			<? if ($menu_name == 'lesson'): ?> <div class="utopc_s"><?=$lesson['name_'.$lang]?></div> <? endif ?>
-		</div>
-	<? endif ?>

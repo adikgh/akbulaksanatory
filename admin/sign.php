@@ -4,7 +4,7 @@
 	if ($user_id) header('location: /admin/');
 
 	// site setting
-	$menu_name = 'sign_in';
+	$menu_name = 'sign';
 	$site_set['header'] = false;
 	// $site_set['footer'] = false;
 	$site_set['cl_wh'] = true;

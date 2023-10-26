@@ -21,7 +21,7 @@
 
 		// cours
 		public static function number($id) {
-			$sql = db::query("select * from sanatorium_number where id = '$id'");
+			$sql = db::query("select * from bibi_number where id = '$id'");
 			if (mysqli_num_rows($sql)) return mysqli_fetch_array($sql); else return null;
 		}
 		public static function number_type($id) {

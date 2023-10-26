@@ -10,8 +10,15 @@
    $site_set = [
       'header' => true,
       'menu' => true,
+      'utopu' => true,
+      'utop_bk' => false,
+      
       'footer' => true,
       'footer_c' => true,
+      
+      'plyr' => true,
+      'swiper' => true,
+      'autosize' => true,
    ];
    $css = [];
    $js = [];

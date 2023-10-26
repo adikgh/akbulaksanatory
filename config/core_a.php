@@ -4,10 +4,10 @@
     require 'fun_a.php';
     require 't.php';
     // require "smsc_api.php";
+    require 'var.php';
 
     class core {
         public static $user_ph = false;
-        public static $user_pm = false;
         public static $user_data = array();
 
         public function __construct() {
@@ -20,7 +20,6 @@
         private function authorize() {
             $user_ph = false;
             $user_pc = false;
-            // $user_pm = false;
 
             if (isset($_SESSION['uph']) && isset($_SESSION['upc'])) {
                 $user_ph = $_SESSION['uph'];
@@ -55,31 +54,7 @@
 
     // data
     $core = new core;
-    $user = core::$user_data;
-    $user_id = $user['id'];
-
-
-    // lang
-    $lang = 'kz';
-    if (isset($_GET['lang'])) if ($_GET['lang'] == 'kz' || $_GET['lang'] == 'ru') $_SESSION['lang'] = $_GET['lang'];
-    if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
-
-
-    // setting
-    $ver = 3.412;
     $site = mysqli_fetch_array(db::query("select * from `site` where id = 1"));
-    $site_set = [
-        'header' => true,
-        'menu'   => true,
-        'footer' => true,
-        'utopu' => true,
-    ];
-    $css = [];
-    $js = [];
-    $code = rand(1000, 9999);
-
-
-    // date - time
-    $date = date("Y-m-d", time());
-    $time = date("H:m:s", time());
-    $datetime = date('Y-m-d H:i:s', time());
+    $user = core::$user_data;
+    if ($user) $user_id = $user['id'];
+    else $user_id = false;

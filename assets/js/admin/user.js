@@ -200,26 +200,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
 	// menu sk
 	$('.uitemc_umidl').on('click', function () {
 		$('.uitemc_umid').toggleClass('menu_act')
@@ -228,20 +208,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 	
 
 
@@ -250,19 +216,7 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-   // cours add block
-	$('.cours_add_pop').click(function(){
-		$('.cours_add_block').addClass('pop_bl_act');
-		$('#html').addClass('ovr_h');
-	})
-	$('.cours_add_back').click(function(){
-		$('.cours_add_block').removeClass('pop_bl_act');
-		$('#html').removeClass('ovr_h');
-	})
+	
 
 	// 
 	$('html').on('click', '.cours_img_add', function(){
@@ -282,7 +236,7 @@ $(document).ready(function() {
 				data: formData,
 				success: function(msg){
 					if (msg.error == '') {
-						tfile_n = 'url(/assets/uploads/sanatorium/' + msg.file + ')'
+						tfile_n = 'url(/assets/uploads/number/' + msg.file + ')'
 						tfile.attr('data-val', msg.file)
 						tfile.siblings('.cours_img_add').addClass('form_im_img2')
 						tfile.siblings('.cours_img_add').css('background-image', tfile_n)
@@ -293,115 +247,6 @@ $(document).ready(function() {
 			});
 		}
 	});
-
-	// 
-	$('.price1_clc').click(function() { $('.price1_block').toggleClass('price1_block_act') });
-	$('.number1_clc').click(function() { $('.number1_block').toggleClass('number1_block_act') });
-
-	// 
-	$('.btn_item_add').click(function () { 
-		if ($('.cours_name').attr('data-sel') != 1) mess('Форманы толтырыңыз')
-		else {
-			$.ajax({
-				url: "/admin/item/get.php?item_add",
-				type: "POST",
-				dataType: "html",
-				data: ({
-					name: $('.cours_name').attr('data-val'),
-					adres: $('.cours_autor_ubd').data('val'),
-					sh_adres: $('.sh_adres').data('val'),
-					img: $('.sh_img').attr('data-val'),
-				}),
-				success: function(data){
-					if (data == 'plus') location.reload();
-					else console.log(data)
-				},
-				beforeSend: function(){ },
-				error: function(data){ console.log(data) }
-			})
-		}
-	})
-	
-	// cours add block
-	$('.cours_edit_pop').click(function(){
-		$('.cours_edit_block').addClass('pop_bl_act');
-		$('#html').addClass('ovr_h');
-	})
-	$('.cours_edit_back').click(function(){
-		$('.cours_edit_block').removeClass('pop_bl_act');
-		$('#html').removeClass('ovr_h');
-	})
-	$('.btn_cours_edit').click(function () { 
-		$.ajax({
-			url: "/admin/item/get.php?item_edit",
-			type: "POST",
-			dataType: "html",
-			data: ({
-				id: $('.btn_cours_edit').data('cours-id'),
-				name: $('.sh_name_ubd').data('val'),
-				adres: $('.cours_autor_ubd').data('val'), 
-				sh_adres: $('.sh_adres_ubd').data('val'),
-				img: $('.sh_img_ubd').data('val'),
-			}),
-			success: function(data){
-				if (data == 'plus') location.reload();
-				else console.log(data)
-			},
-			beforeSend: function(){ },
-			error: function(data){ console.log(data) }
-		})
-	})
-
-
-	// 
-	$('.cours_copy').click(function () {
-		$.ajax({
-			url: "/admin/item/get.php?cours_copy",
-			type: "POST",
-			dataType: "html",
-			data: ({ id: $('.cours_copy').data('id'), }),
-			beforeSend: function(){ },
-			error: function(data){ console.log(data) },
-			success: function(data){
-				if (data == 'yes') location.url('/user/cours/');
-				else console.log(data)
-			},
-		})
-	})
-
-
-	// 
-	$('.cours_arh').click(function () {
-		$.ajax({
-			url: "/admin/item/get.php?cours_arh",
-			type: "POST",
-			dataType: "html",
-			data: ({ id: $('.cours_arh').data('id'), }),
-			success: function(data){
-				if (data == 'yes') location.reload();
-				else console.log(data)
-			},
-			beforeSend: function(){ },
-			error: function(data){ console.log(data) }
-		})
-	})
-	// 
-	$('.cours_del').click(function () {
-		$.ajax({
-			url: "/admin/item/get.php?cours_del",
-			type: "POST",
-			dataType: "html",
-			data: ({ id: $('.cours_del').data('id'), }),
-			success: function(data){
-				if (data == 'yes') $(location).attr('href', '/admin/');
-				else console.log(data)
-			},
-			beforeSend: function(){ },
-			error: function(data){ console.log(data) }
-		})
-	})
-
-
 
 
 
@@ -425,8 +270,7 @@ $(document).ready(function() {
 			type: "POST",
 			dataType: "html",
 			data: ({
-				cours_id: $('.btn_lesson_add').data('cours-id'),
-				wb_type: $('.wb_type').attr('data-val'),
+				wb_name: $('.wb_name').attr('data-val'),
 				wb_number: $('.wb_number').attr('data-val'),
 				wb_price: $('.wb_price').attr('data-val'),
 				img: $('.wb_img').attr('data-val'),
@@ -476,7 +320,7 @@ $(document).ready(function() {
 			dataType: "html",
 			data: ({
 				id: id,
-				wb_type: $('.wb_type_ubd').attr('data-val'),
+				wb_name: $('.wb_name_ubd').attr('data-val'),
 				wb_number: $('.wb_number_ubd').attr('data-val'),
 				wb_price: $('.wb_price_ubd').attr('data-val'),
 				img: $('.wb_img_ubd').attr('data-val'),
@@ -590,7 +434,7 @@ $(document).ready(function() {
 		if ($('.company_name').val().length <= 2) mess('Атыңызды толтырыңыз')
 		else {
 			$.ajax({
-				url: "/admin/admin/get.php?company_edit",
+				url: "/admin/get.php?company_edit",
 				type: "POST",
 				dataType: "html",
 				data: ({

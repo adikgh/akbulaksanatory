@@ -110,94 +110,27 @@
 				
 				<div class="blnm_cn">
 
-					<div class="swiper-slide blnm_i">
-
-						<div class="blnm_img">
-							<div class="lazy_img2" data-src="/assets/uploads/number/7c4f4995934926702117014562762c2c.jpg"></div>
-						</div>
-
-						<div class="blnm_ic">
-							<div class="blnm_ict">2-местный номер</div>
-							<div class="blnm_ico">
-								<div class="blnm_ico1">2 койки, 2 тумбочки, плательный шкаф, стол обеденный, стулья, телевизор, холодильник, ванна, санузел, посуда, предметы первой необходимости.</div>
-								<div class="blnm_ico2">Стоимость за одного человека 15 500тг</div>
-								<div class="blnm_ico3">
-									<div class="">Дети до 3-х лет  (за питание и проживание) 3 000 тг.</div>
-									<div class="">Дети от 3-х до 6 лет 6 000 тг.</div>
-									<div class="">Дети от 6 до 12 лет 9 000 тг.</div>
+					<? $cblock = db::query("select * from bibi_number"); ?>
+					<? while($cblock_d = mysqli_fetch_assoc($cblock)): ?>
+						<div class="swiper-slide blnm_i">
+							<div class="blnm_img">
+								<div class="lazy_img2" data-src="/assets/uploads/number/<?=$cblock_d['img']?>"></div>
+							</div>
+							<div class="blnm_ic">
+								<div class="blnm_ict"><?=$cblock_d['name']?></div>
+								<div class="blnm_ico">
+									<div class="blnm_ico1"><?=$cblock_d['txt']?></div>
+									<div class="blnm_ico2">Стоимость за одного человека <?=$cblock_d['price']/$cblock_d['door']?> тг</div>
+									<?=(@$cblock_d['txt2']?@$cblock_d['txt2']:'')?>
+									<div class="blnm_ico4">В цену номера включены постельное белье и полотенца.</div>
 								</div>
-								<div class="blnm_ico4">В цену номера включены постельное белье и полотенца.</div>
-							</div>
-							<div class="blnm_icp">
-								<div class="blnm_icp1">* существует сезонная система скидок</div>
-								<div class="blnm_icp2">Цена: 31 000 тенге/сутки</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="swiper-slide blnm_i">
-
-						<div class="blnm_ic">
-							<div class="blnm_ict">Одноместный номер</div>
-							<div class="blnm_ico">
-								<div class="blnm_ico1">2-х спальная кровать, журнальный столик, 2 кресла, плательный шкаф, стол обеденный, стулья, телевизор, холодильник, ванна, санузел, посуда, предметы первой необходимости</div>
-								<div class="blnm_ico2">Проживание за второго человека 10 000 тг.</div>
-								<div class="blnm_ico4">В стоимость входит постельное белье и полотенце, а так же все удобства.</div>
-							</div>
-							<div class="blnm_icp">
-								<div class="blnm_icp1">* существует сезонная система скидок</div>
-								<div class="blnm_icp2">Цена: 20 000 тенге/сутки</div>
+								<div class="blnm_icp">
+									<div class="blnm_icp1">* существует сезонная система скидок</div>
+									<div class="blnm_icp2">Цена: <?=$cblock_d['price']?> тенге/сутки</div>
+								</div>
 							</div>
 						</div>
-
-						<div class="blnm_img">
-							<div class="lazy_img2" data-src="/assets/uploads/number/e2f5149d92256dda1f5967c5ccfdbb61.jpg"></div>
-						</div>
-
-					</div>
-
-					<div class="swiper-slide blnm_i">
-
-						<div class="blnm_img">
-							<div class="lazy_img2" data-src="/assets/uploads/number/ac499dc92661fbe3d6e7ab6ef59af6b7.jpg"></div>
-						</div>
-
-						<div class="blnm_ic">
-							<div class="blnm_ict">Люкс</div>
-							<div class="blnm_ico">
-								<div class="blnm_ico1">Люкс состоит из 2-х комнат, 2-х спальная кровать, плательный шкаф, диван, кресло, ванна, санузел, все предметы быта, комплект посуды, холодильник, телефон, телевизор.</div>
-								<div class="blnm_ico2">При проживании свыше двух человек в номере доплата за каждого 10 000 тг.</div>
-								<div class="blnm_ico4">В стоимость входит постельное белье и полотенце, а так же все удобства .</div>
-							</div>
-							<div class="blnm_icp">
-								<div class="blnm_icp1">* существует сезонная система скидок</div>
-								<div class="blnm_icp2">Цена: 35 000 - 45 000 тенге/сутки</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="swiper-slide blnm_i">
-
-						<div class="blnm_ic">
-							<div class="blnm_ict">Домики</div>
-							<div class="blnm_ico">
-								<div class="blnm_ico1">Состоит из 2-х комнат, 2-х спальная кровать, плательный шкаф, диван, кресло, ванна, санузел, все предметы быта, комплект посуды, холодильник, телефон, телевизор.</div>
-								<div class="blnm_ico2">При проживании свыше двух человек в номере доплата за каждого 10 000 тг.</div>
-								<div class="blnm_ico4">В цену номера постельное белье и полотенце, а так же все удобства.</div>
-							</div>
-							<div class="blnm_icp">
-								<div class="blnm_icp1">* существует сезонная система скидок</div>
-								<div class="blnm_icp2">Цена: 35 000 тенге/сутки</div>
-							</div>
-						</div>
-
-						<div class="blnm_img">
-							<div class="lazy_img2" data-src="/assets/uploads/number/839053c432b9404b29e2b55455cd238d.jpg"></div>
-						</div>
-
-					</div>
+					<? endwhile ?>
 
 				</div>
 			</div>
